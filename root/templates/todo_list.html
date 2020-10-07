@@ -3,7 +3,7 @@
     <tr>
       <th scope="col">No.</th>
       <th scope="col">Task Name</th>
-      <th scope="col">Edit or Delete</th>
+      <th scope="col"> Marking </th>
     </tr>
   </thead>
   <tbody>
@@ -12,7 +12,7 @@
       <td scope="row">{{ tasks.index(task)+1 }}</td>
       <td scope="row">{{ task.task }}</td>
       <td>
-        <a name="" id="" class="btn btn-outline-danger" href="{{ url_for('delete', task_id=task.id) }}" role="button">Delete</a>
+        <a name="" id="" class="btn btn-outline-primary" href="{{ url_for('delete', task_id=task.id) }}" role="button">Done ✔ </a>
       </td>
       <td></td>
     </tr>
