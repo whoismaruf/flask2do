@@ -19,11 +19,10 @@
   </head>
   <body>
     <div class="container justify-content-center mt-3">
-      <div class="card text-black">
+      {% include 'navbar.html' %}
+      <div class="card text-black mt-5">
         <div class="card-body">
           {% include 'todo_form.html' %}
-
-
 
           {% include 'todo_list.html' %}
         </div>
