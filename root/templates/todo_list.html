@@ -1,15 +1,15 @@
 <table class="table">
-  <thead class="thead-light">
+  <thead class="thead">
     <tr>
       <th scope="col">No.</th>
       <th scope="col">Task Name</th>
-      <th scope="col">Operation</th>
+      <th scope="col">Edit or Delete</th>
     </tr>
   </thead>
   <tbody>
     {% for task in tasks %}
     <tr>
-      <th scope="row">{{ task.id }}</th>
+      <td scope="row">{{ tasks.index(task)+1 }}</td>
       <td scope="row">{{ task.task }}</td>
       <td>
         <a name="" id="" class="btn btn-outline-primary mr-1" href="#" role="button">Edit</a>

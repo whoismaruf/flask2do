@@ -1,0 +1,90 @@
+{% extends 'layout.html' %} {% block content %}
+
+<div class="my-5 mx-5" style="padding: 0 300px 0 300px;">
+
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <legend class="mt-3 mb-5 text-center">Register Here 📝</legend>
+      <!-- Username Field -->
+  
+    <div class="form-group">
+      {{ form.username.label }} 
+      {% if form.username.errors %}
+        {{ form.username(class="form-control is-invalid") }} 
+        <div class="invalid-feedback">
+            {% for err in form.username.errors %}
+              <span class="text-danger">{{ err }}</span>
+            {% endfor %}
+        </div>
+      {% else %} 
+        {{ form.username(class='form-control') }} 
+      {% endif %}
+    </div>
+  
+    <!-- Username Field End -->
+  
+    <!-- email Field -->
+  
+    <div class="form-group">
+      {{ form.email.label }} 
+      {% if form.email.errors %}
+        {{ form.email(class="form-control is-invalid") }} 
+        <div class="invalid-feedback">
+            {% for err in form.email.errors %}
+              <span class="text-danger">{{ err }}</span>
+            {% endfor %}
+        </div>
+      {% else %} 
+        {{ form.email(class='form-control') }} 
+      {% endif %}
+    </div>
+  
+    <!-- email Field End -->
+  
+    <!-- password Field -->
+  
+    <div class="form-group">
+      {{ form.password.label }} 
+      {% if form.password.errors %}
+        {{ form.password(class="form-control is-invalid") }} 
+        <div class="invalid-feedback">
+            {% for err in form.password.errors %}
+              <span class="text-danger">{{ err }}</span>
+            {% endfor %}
+        </div>
+      {% else %} 
+        {{ form.password(class='form-control') }} 
+      {% endif %}
+    </div>
+  
+    <!-- password Field End -->
+  
+    <!-- confirm_password Field -->
+  
+    <div class="form-group">
+      {{ form.confirm_password.label }} 
+      {% if form.confirm_password.errors %}
+        {{ form.confirm_password(class="form-control is-invalid") }} 
+        <div class="invalid-feedback">
+            {% for err in form.confirm_password.errors %}
+              <span class="text-danger">{{ err }}</span>
+            {% endfor %}
+        </div>
+      {% else %} 
+        {{ form.confirm_password(class='form-control') }} 
+      {% endif %}
+    </div>
+  
+    <!-- confirm_password Field End -->
+  
+  {{ form.submit(class="btn btn-outline-primary mt-2") }}
+
+    </fieldset>
+
+  </form>
+
+</div>
+
+
+{% endblock %}
