@@ -12,7 +12,6 @@
       <td scope="row">{{ tasks.index(task)+1 }}</td>
       <td scope="row">{{ task.task }}</td>
       <td>
-        <a name="" id="" class="btn btn-outline-primary mr-1" href="#" role="button">Edit</a>
         <a name="" id="" class="btn btn-outline-danger" href="{{ url_for('delete', task_id=task.id) }}" role="button">Delete</a>
       </td>
       <td></td>
