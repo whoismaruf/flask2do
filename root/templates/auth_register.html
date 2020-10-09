@@ -6,23 +6,24 @@
     {{ form.hidden_tag() }}
     <fieldset class="form-group">
       <legend class="mt-3 mb-5 text-center">Register Here 📝</legend>
+        
       <!-- Username Field -->
-  
-    <div class="form-group">
-      {{ form.username.label }} 
-      {% if form.username.errors %}
-        {{ form.username(class="form-control is-invalid") }} 
-        <div class="invalid-feedback">
-            {% for err in form.username.errors %}
-              <span class="text-danger">{{ err }}</span>
-            {% endfor %}
+    
+        <div class="form-group">
+          {{ form.username.label }} 
+          {% if form.username.errors %}
+            {{ form.username(class="form-control is-invalid") }} 
+            <div class="invalid-feedback">
+                {% for err in form.username.errors %}
+                  <span class="text-danger">{{ err }}</span>
+                {% endfor %}
+            </div>
+          {% else %} 
+            {{ form.username(class='form-control') }} 
+          {% endif %}
         </div>
-      {% else %} 
-        {{ form.username(class='form-control') }} 
-      {% endif %}
-    </div>
-  
-    <!-- Username Field End -->
+    
+      <!-- Username Field End -->
   
     <!-- email Field -->
   
