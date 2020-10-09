@@ -67,9 +67,11 @@ To get a local copy up and running follow these simple steps.
 This is an example of how to list things you need to use the software and how to install them.
 
 <br>
+
 * Clone the repo
+
 ```sh
-git clone https://github.com/github_username/repo_name.git
+git clone https://github.com/whoismaruf/flask2do.git
 ```
 <br>
 
