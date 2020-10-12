@@ -1,12 +1,12 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, ValidationError, PasswordField, BooleanField
+from wtforms import StringField, SubmitField, ValidationError, PasswordField, BooleanField, TextField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
 from .models import Todo, User
 from flask_login import current_user
 
 
 class TodoForm(FlaskForm):
-    task = StringField('Task Name',
+    task = TextField('Task Name',
                         validators=[DataRequired(),
                         Length(min=5, message='At least 5 chacracters are required 😁')])
     submit = SubmitField('Add Task')
