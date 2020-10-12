@@ -3,7 +3,7 @@ from flask_login import UserMixin
 
 class Todo(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
-    task = db.Column(db.String(260), nullable=False)
+    task = db.Column(db.Text(260), nullable=False)
     tasker_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     def __repr__(self):
