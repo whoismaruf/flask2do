@@ -5,6 +5,17 @@ from .forms import TodoForm, UserRegistraionForm, LoginForm
 from flask_login import current_user, login_user, logout_user, login_required
 
 
+# Uncomment it when you deploy in a server where you have SSL certificate
+# It will redirect your domain/subdomain to https://
+
+# @app.before_request
+# def before_request():
+#     if request.url.startswith('http://'):
+#         url = request.url.replace('http://', 'https://', 1)
+#         code = 301
+#         return redirect(url, code=code)
+
+
 @app.route('/', methods=['GET', 'POST'])
 @login_required
 def index():
