@@ -7,10 +7,9 @@ from flask_login import current_user
 
 class TodoForm(FlaskForm):
     task = TextField('Task Name',
-                        validators=[DataRequired(),
-                        Length(min=5, message='At least 5 chacracters are required 😁')])
+                     validators=[DataRequired(),
+                                 Length(min=5, message='At least 5 chacracters are required 😁')])
     submit = SubmitField('Add Task')
-
 
 
 class UserRegistraionForm(FlaskForm):
@@ -23,7 +22,7 @@ class UserRegistraionForm(FlaskForm):
     def validate_username(self, username):
         if User.query.filter_by(username=username.data).first():
             raise ValidationError('Username has been taken alrady 😪')
-    
+
     def validate_email(self, email):
         if User.query.filter_by(email=email.data).first():
             raise ValidationError('Email has been taken already 😪')

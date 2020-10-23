@@ -1,6 +1,7 @@
 from root import db
 from flask_login import UserMixin
 
+
 class Todo(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     task = db.Column(db.Text(260), nullable=False)
@@ -16,6 +17,6 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
     tasks = db.relationship('Todo', backref='tasker', lazy=True)
-    
+
     def __str__(self):
         return [self.username, self.email]
