@@ -5,11 +5,14 @@
            <h5>Add Task </h5>
         </div> -->
     <div class="form-group mx-sm-3 mb-2">
-      {% if form.task.errors %} {{ form.task(class="form-control is-invalid") }}
-      {% for err in form.task.errors %}
-      <span class="text-danger ml-2">{{ err }}</span>
-      {% endfor %} {% else %} {{ form.task(class="form-control ml-2") }} {%
-      endif %}
+      {% if form.task.errors %} 
+        {{ form.task(class="form-control is-invalid") }}
+          {% for err in form.task.errors %}
+          <span class="text-danger ml-2">{{ err }}</span>
+          {% endfor %}
+      {% else %} 
+        {{ form.task(class="form-control ml-2") }} 
+      {% endif %}
     </div>
     {{ form.submit(class="btn btn-success mb-2") }}
   </form>
