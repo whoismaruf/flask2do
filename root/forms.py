@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, ValidationError, PasswordField, BooleanField, TextField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
 from .models import Todo, User
-from flask_login import current_user
+
 
 
 class TodoForm(FlaskForm):

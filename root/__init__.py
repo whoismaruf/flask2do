@@ -14,7 +14,7 @@ login_manager.login_view = 'login'
 login_manager.login_message = "You need to be logged in to get access 🔓"
 login_manager.login_message_category = "warning"
 
-app.config['SECRET_KEY'] = 'rejngorl234crf34rfw'
+app.config['SECRET_KEY'] = 'ringer234crf34rfw'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 
 
