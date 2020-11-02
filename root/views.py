@@ -1,7 +1,7 @@
 from root import app, db, bcrypt
 from flask import render_template, redirect, url_for, flash
 from .models import Todo, User
-from .forms import TodoForm, UserRegistraionForm, LoginForm
+from .forms import TodoForm, UserRegistrationForm, LoginForm
 from flask_login import current_user, login_user, logout_user, login_required
 
 
@@ -39,7 +39,7 @@ def delete(task_id):
 
 @app.route('/register', methods=['GET', 'POST'])
 def registration():
-    form = UserRegistraionForm()
+    form = UserRegistrationForm()
     if form.validate_on_submit():
         hashed_pass = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         u = User(username=form.username.data, email=form.email.data, password=hashed_pass)
