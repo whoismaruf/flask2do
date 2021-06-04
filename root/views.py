@@ -58,7 +58,10 @@ def login():
             login_user(user, remember=form.remember_me.data)
             return redirect(url_for('index'))
         else:
-            flash(message="Your username and password is incorrect", category='danger')
+            if user:
+                flash(message="Your password is incorrect.", category='danger')
+            else:
+                flash(message="No user has been found with this email.", category='danger')
             return redirect(url_for('login'))
     return render_template('auth_login.html', form=form)
 
