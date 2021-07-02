@@ -11,6 +11,10 @@ class TodoForm(FlaskForm):
                                  Length(min=5, message='At least 5 characters are required 😁')])
     submit = SubmitField('Add Task')
 
+    def validate_task(self, task):
+        if Todo.query.filter_by(task=task.data).first():
+            raise ValidationError('Similar tasks are already in the list!')
+
 
 class UserRegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=4, max=32)])
